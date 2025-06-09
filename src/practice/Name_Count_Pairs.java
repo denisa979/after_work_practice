@@ -1,23 +1,15 @@
-package jdbc_practice;
+package practice;
 
+import java.lang.reflect.Modifier;
 import java.util.*;
 
-public class Practice1 {
+public class Name_Count_Pairs{
 
 public static void main(String[] args){
     
          List<String> data = Arrays.asList("John 5", "Mary 3", "Bob 2", "Alisa 1");
-    System.out.println("namesAndCount(data) = " + namesAndCount(data));
-
-    System.out.println("------------------------------------------------------------------");
+    System.out.println("countNames(data) = " + countNames(data));
     
-    List<String> inputList = freaquencyOfString( Arrays.asList("alex","mia","mia","alex","mia") );
-    
-    inputList.forEach( System.out::println );
-
-
-
-
 }
 
                  // Parses pre-formatted "name count" strings and stores them in a map
@@ -44,40 +36,6 @@ public static void main(String[] args){
             }
             return namesAndCount;     // Returns the completed map containing all name-count pairs.
         }
-        
-        /*
-         Second method: Counts how many times each string appears in the list and returns formatted results
-The second method is a classic frequency counter implementation using the getOrDefault() pattern, which is very efficient for counting occurrences.
-         */
-              //  Counts how many times each string appears in the list and returns formatted results
-              public static List<String> freaquencyOfString (List<String>list){
-        
-               // Creates a HashMap to store string frequencies.
-                  Map<String, Integer> freaquencyMap= new HashMap<>();
-                  
-               //  Enhanced for loop iterating through each string in the input list.  
-                  for(String each : list){
-               /*
-                This is the key line for frequency counting:
-               getOrDefault(each, 0) gets the current count for the string, or returns 0 if the string doesn't exist   in the map +1 increments that count by 1 put(each, newCount) stores the updated count back in the map       
-                */
-                      freaquencyMap.put(each,freaquencyMap.getOrDefault(each, 0)+1);
-                  }
-                  
-                  //  Creates a new ArrayList to store the formatted results
-                  List<String> result = new ArrayList<>();
-                  
-                  //Iterates through each key-value pair in the frequency map using entrySet().
-                  for(Map.Entry<String, Integer> entrySet : freaquencyMap.entrySet()){
-                      
-                      /*
-                      getKey() retrieves the string, getValue() retrieves its frequency count
-Concatenates them with a space in between. Adds the formatted string to the result list
-                       */
-                      result.add(entrySet.getKey() + " " + entrySet.getValue());
-                  }
-                  return result;
-              }
               
               public static Map<String, Integer> namesAndCount(List<String> list){
                   Map<String, Integer> totalNamesAndCount = new LinkedHashMap<>();
@@ -158,5 +116,47 @@ Concatenates them with a space in between. Adds the formatted string to the resu
                       
                   }
                   return nameCount6;
+              }
+              
+              public static Map<String, Integer> nameCount5(List<String> list) {
+    Map<String, Integer> name_count=new HashMap<>();
+                  for( String each : list ){
+                      String[] parts = each.split( " " );
+                      String names = parts[0];
+                      Integer counts = Integer.parseInt(parts[1] );
+                      name_count.put( names,counts);
+                  }
+                  return name_count;
+              }
+              public static Map<String, Integer> namesCout(List<String> list){
+    Map<String, Integer> newCount=new HashMap<>();
+                  for( String each : list ){
+                      String[] parts2 = each.split( " " );
+                      String names1 = parts2[ 0 ];
+                      Integer counts1 = Integer.parseInt( parts2[ 1 ] );
+                      newCount.put( names1,counts1 );
+                  }
+                  return newCount;
+              }
+              public static Map<String, Integer>  nameAndCount (List<String> list) {
+    Map<String, Integer>  countName= new HashMap<>();
+                  for( String each : list ){
+                      String[]  parts5=each.split( " " );
+                      String names5=parts5[0];
+                      Integer counts5 = Integer.parseInt( each,1 );
+                        countName.put( names5, counts5 );
+                  }
+                  return countName;
+              }
+              public static Map<String, Integer> countNames(List<String>list){
+    Map<String, Integer> nameCount=new LinkedHashMap<>();
+                  for( String each : list ){
+                      String[] parts5=each.split( " " );
+                      String name6=parts5[ 0 ];
+                      Integer count6 = Integer.parseInt( parts5[ 1 ] );
+                      nameCount.put( name6, count6 ) ;
+                      
+                  }
+                  return nameCount;
               }
 }             
