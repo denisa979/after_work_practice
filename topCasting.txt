@@ -1,0 +1,45 @@
+Map<String, Integer> topCasting = new HashMap<>(); --> HashMap: No order guaranteed; order can change as elements are added/removed.
+
+Map<String, Integer> topCasting = new TreeMap<>(); --> TreeMap: Always sorted by key (either natural order or comparator provided at creation).
+
+Map<String, Integer> topCasting = new LinkedHashMap<>(); --> LinkedHashMap: Maintains insertion order by default. Can maintain access order if specified in the constructor.
+
+
+Keys: None of these maps allow duplicate keys. If you insert a duplicate key, the new value replaces the old one.
+
+Values: All allow duplicate values (different keys can have the same value).
+
+All three implement the Map interface, so they share most methods:
+
+put(K key, V value)
+
+get(Object key)
+
+remove(Object key)
+
+containsKey(Object key)
+
+containsValue(Object value)
+
+keySet()
+
+values()
+
+entrySet()
+
+clear()
+
+size()
+
+forEach(BiConsumer<? super K,? super V> action).
+
+TreeMap adds:
+firstKey(), lastKey(), ceilingKey(), floorKey(), headMap(), tailMap(), subMap(), descendingMap() for sorted navigation.
+
+LinkedHashMap and HashMap have similar APIs, but LinkedHashMap guarantees order.
+
+TreeMap: Sorted by key, no duplicate keys, allows duplicate values, O(log n) operations, useful for sorted data.
+
+LinkedHashMap: Maintains insertion (or access) order, no duplicate keys, allows duplicate values, O(1) operations, use when order matters.
+
+HashMap: No order, no duplicate keys, allows duplicate values, fastest O(1) operations, use when order doesn’t matter.

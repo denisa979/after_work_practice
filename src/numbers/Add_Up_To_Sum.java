@@ -1,6 +1,5 @@
-package practice;
+package numbers;
 
-import java.lang.reflect.Modifier;
 import java.util.HashSet;
 
 public class Add_Up_To_Sum{

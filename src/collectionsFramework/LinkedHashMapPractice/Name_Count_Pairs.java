@@ -1,6 +1,5 @@
-package practice;
+package collectionsFramework.LinkedHashMapPractice;
 
-import java.lang.reflect.Modifier;
 import java.util.*;
 
 public class Name_Count_Pairs{
@@ -160,3 +159,13 @@ public static void main(String[] args){
                   return nameCount;
               }
 }             
+
+/*
+LinkedHashMap preserves the order in which keys are inserted. This means when you iterate over the map, you get the names in the same order they first appeared in the input list.
+
+Predictable iteration:
+If you want the output (for example, printing name counts) to follow the order of first appearance in the input, LinkedHashMap is the right choice.
+
+Performance:
+Basic operations like get(), put(), and remove() are still O(1) on average, just like HashMap, though LinkedHashMap is slightly slower due to maintaining the linked list for order
+ */

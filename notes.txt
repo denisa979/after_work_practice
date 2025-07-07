@@ -1,0 +1,71 @@
+How to remove duplicate elements from ArrayList? 
+we can handle this scenario via LikedHashSet 
+ArrayList<Integer> numbers = new ArrayList<Integer>(Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8)); 
+LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<Integer>(numbers);  
+ArrayList<Integer> numbersListWithoutDuplicate = new ArrayList<Integer>(LinkedHashSet)); 
+System.out.println(numbersListWithoutDuplicate);
+
+Also we can handle this via stream  
+ArrayList<Integer> marksList = new ArrayList<Integer>(Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8)); 
+List<Integer> marksListUnique= marksList.stream().distnict().collect(Collectors.toList()); 
+System.out.println(marksListUnique); 
+
+ How to compare two array list? 
+Via Collection.sort(); and equal  
+
+How to find additional element in list while comparing 2 List? 
+If we have 2 list l1 & l2 , first we remove all element of l2 
+L1.removeAll(l2): 
+Sysout(L1) – you will get additional element.
+
+How to find common element in list while comparing 2 List? 
+L1.retainAll(L2); 
+Sysout(L1) – you will get common element.
+
+How will you print length of string without using length method. 
+String str = “Pankaj” 
+Sysout(str.toCharArray().length); 
+Sysout(str.lastIndexOf(“”));
+
+How to reverse an Integer? 
+int num = 12345; 
+int rev = 0; 
+while(num !=0){ 
+rev =rev *10+ num % 10; 
+num = num/10; 
+} 
+Sysout (rev)
+
+
+ How to reverse any array? 
+public class reverse array { 
+public static void main(String[] args) { 
+int [] arr = {1, 45, 67, 98, 455, 678}; 
+int l = arr.length; 
+int n = Math.floorDiv(l,2); 
+int temp; 
+for(int i=0; i<n;i++){ 
+temp= arr[i]; 
+arr[i]= arr[l-i-1]; 
+arr[l-i-1]= temp; 
+} 
+for(int element:arr) 
+{ 
+System.out.print( element + " "); 
+} 
+}} 
+================================================================ 
+public class reverse array { 
+public static void main(String[] args) { 
+int [] Array ={7,8,9,3,4,6,11,67,98}; 
+int k=Array.length-1; 
+for(k=Array.length-1;k>=0;k--){ 
+System.out.print( Array[k] + " "); 
+} 
+}} 
+==========================
+
+• Map.Entry: Represents a single key-value pair in the map.
+• entrySet(): Returns a set of all entries, allowing you to iterate over them.
+• getKey() / getValue(): Methods to access the key and value from each entry.
+This approach is efficient and clean, letting you work with both keys and values in a single loop

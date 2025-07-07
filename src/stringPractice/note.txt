@@ -1,0 +1,3 @@
+
+Here are 4 Java problems focusing on String literals, StringBuffer, and StringBuilder without solutions. Each problem highlights key differences in mutability, performance, and thread safety.
+Real-world Use Cases: Text manipulation, concurrency, undo functionality.

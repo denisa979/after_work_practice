@@ -1,0 +1,12 @@
+
+Here are 4 object-oriented programming (OOP) problems designed to practice key concepts like encapsulation, inheritance, polymorphism, and abstraction. No solutions included – solve them step-by-step!
+
+Key OOP Concepts Covered:
+
+Problem 1: Abstraction + Encapsulation
+
+Problem 2: Inheritance + Polymorphism
+
+Problem 3: Interface Polymorphism
+
+Problem 4: Composition/AggregationKey OOP Concepts Covered:

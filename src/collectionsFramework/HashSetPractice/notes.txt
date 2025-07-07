@@ -1,0 +1,5 @@
+Set is an interface in Java Collections Framework. It represents a collection that does not allow duplicate elements13.
+
+By declaring your variable as Set<Integer>, you make your code flexible: you can later change the implementation (to TreeSet, LinkedHashSet, etc.) without changing the rest of your code2.
+
+Coding to the interface (not the implementation) is a best practice in Java, promoting flexibility and maintainability8.
