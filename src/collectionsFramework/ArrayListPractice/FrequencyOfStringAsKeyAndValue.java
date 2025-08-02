@@ -1,0 +1,23 @@
+package collectionsFramework.ArrayListPractice;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class FrequencyOfStringAsKeyAndValue{
+
+	public static void main( String[] args ){
+		    List<String> list = List.of("apple", "banana", "apple", "orange", "banana", "apple");
+		System.out.println( "frequency1( list ) = " + frequencyOfString( list ) );
+	}
+	
+	
+	public static Map<String, Integer> frequencyOfString(List<String> list){
+		Map<String, Integer> nameCount = new HashMap<>();
+	for (String s: list){
+		nameCount.put(s, nameCount.getOrDefault(s,0)+1);
+	}
+	return nameCount;
+}
+}
