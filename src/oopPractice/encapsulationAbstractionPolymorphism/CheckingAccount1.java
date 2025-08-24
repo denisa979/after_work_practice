@@ -1,26 +1,25 @@
-package oopPractice;
+package oopPractice.encapsulationAbstractionPolymorphism;
 
-public  class CheckingAccount2 extends BankAccount2{
+public class CheckingAccount1 extends BankAccount1{
 	
 	private double overdraftLimit;
 	
-	public CheckingAccount2(int accountNumber, double initialBalance, double overdraftLimit){
+	public CheckingAccount1(int accountNumber, double initialBalance, double overdraftLimit){
 		super(accountNumber, initialBalance);
 		this.overdraftLimit=overdraftLimit;
 	}
 
-	private double getOverdraftLimit( ){
+	public double getOverdraftLimit( ){
 		return overdraftLimit;
 	}
 
-	private void setOverdraftLimit( double overdraftLimit ){
+	public void setOverdraftLimit( double overdraftLimit ){
 		this.overdraftLimit = overdraftLimit;
 	}
 
 	@Override
 	public void withdraw( double amount ){
-		
-		if(amount>0 && balance>=overdraftLimit){
+		if(amount>0 && balance>= overdraftLimit){
 			balance-=amount;
 		}
 	}

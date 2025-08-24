@@ -1,3 +1,20 @@
+StringBuffer is thread-safe due to synchronized methods, so its output is consistent.
 
-Here are 4 Java problems focusing on String literals, StringBuffer, and StringBuilder without solutions. Each problem highlights key differences in mutability, performance, and thread safety.
-Real-world Use Cases: Text manipulation, concurrency, undo functionality.
+String and StringBuilder are not thread-safe; their output may be inconsistent due to race conditions.
+The expected length is the sum of all appended numbers' digit counts (not exactly 2000, since numbers have varying digit lengths).
+
+Use StringBuffer for thread safety in concurrent scenarios
+
+StringBuilder, StringBuffer, Stack methods:
+
+append(String str): Adds the given text to the end of the current text and records it for possible undo.
+
+undo(): Removes the last appended text, reverting the text to its previous state.
+
+getText(): Returns the current text as a string.
+
+push(E item): Adds (pushes) an item onto the top of the stack.
+
+pop(): Removes and returns the item at the top of the stack.
+
+peek(): Returns the item at the top of the stack without removing it.

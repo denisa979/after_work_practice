@@ -1,4 +1,4 @@
-package oopPractice;
+package oopPractice.encapsulationAbstractionPolymorphism;
 
 public class SavingsAccount2 extends BankAccount2{
 

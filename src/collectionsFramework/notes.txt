@@ -1,0 +1,57 @@
+COLLECTIONS FRAMEWORK
+
+HashMap
+HashMap is a class from the Java Collections Framework that implements the Map interface. It
+stores key-value pairs and allows fast retrieval, insertion, and deletion based on keys. Keys are
+unique, and each key maps to exactly one value, making HashMap ideal for associative arrays or dictionary-like data structures.
+
+ArrayList
+ArrayList is a class from the Java Collections Framework that implements the List interface.It
+maintains an ordered, resizable array of elements, allowing fast random access and dynamic resizing. ArrayList is ideal for lists where frequent retrieval and iteration are needed.
+
+LinkedList
+LinkedList is a class that implements the List and Deque interfaces. It uses a doubly-linked list structure, providing efficient insertion and removal at both ends, and supports ordered iteration. LinkedList is suitable for queues, stacks, and situations with frequent modifications.
+
+HashSet
+HashSet is a class that implements the Set interface and is backed by a hash table.
+It stores unique elements without duplicates and offers constant-time performance for add, remove, and contains operations, making it effective for membership testing.
+
+LinkedHashSet 
+LinkedHashMap is a class in the Java Collections Framework.
+It maintains the insertion order of its entries (ordered by how keys were added).
+Keys in a LinkedHashMap are unique, it does not accept duplicate keys. Each key maps to one value.
+LinkedHashMap implements the Map interface and extends the HashMap class.
+
+TreeSet
+TreeSet is a class that implements the NavigableSet interface. It is backed by a red-black tree, storing elements in sorted order with no duplicates, and provides efficient operations for
+accessing elements based on their ordering.
+
+PriorityQueue
+PriorityQueue is a class that implements the Queue interface. It orders elements according to their natural ordering or a specified comparator, allowing efficient access to the smallest or
+highest-priority element, commonly used in scheduling and graph algorithms.
+
+HashBag
+HashBag is a class from the Apache Commons Collections library that implements the Bag interface a collection type that allows duplicate
+elements and tracks their frequency. It is designed to handle multiple
+occurrences of the same element, making it ideal for tasks involving frequency counting.
+
+- It works like a multiset: you can add elements, and it counts how many times each appears.
+- You can query the count of any element.
+- Useful for frequency counting tasks.
+ We need to add dependency to POM.XML file:
+ 
+ <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>4.4</version>
+</dependency>
+
+ Or if we work with Java without Maven then we can download binary JAR file from Apache Commons Collections.
+ Extract file and add it to your project library under Java.
+
+Go to File > Project Structure > Libraries.
+Click the + button and choose Java.
+Select the downloaded JAR file.
+Apply and OK.
+This makes org.apache.commons.collections4.bag.HashBag available for
+import in your .java source files.

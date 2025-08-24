@@ -1,12 +1,35 @@
 
-Here are 4 object-oriented programming (OOP) problems designed to practice key concepts like encapsulation, inheritance, polymorphism, and abstraction. No solutions included – solve them step-by-step!
+    Here are 4 object-oriented programming (OOP) problems designed to practice key concepts like encapsulation, inheritance, polymorphism, and abstraction. No solutions included – solve them step-by-step!
 
-Key OOP Concepts Covered:
+    Key OOP Concepts Covered:
+    Problem 1: Banking System (Encapsulation, Abstraction & runtime polymorphism (overriding) -->dynamic
 
-Problem 1: Abstraction + Encapsulation
+    Problem 2: E-commerce Product System (Inheritance + Polymorphism)
 
-Problem 2: Inheritance + Polymorphism
+    Problem 3: Zoo Management (Interface + Polymorphism)
 
-Problem 3: Interface Polymorphism
+    Problem 4: Composition/AggregationKey/Data Integrity/Separation of Concerns
 
-Problem 4: Composition/AggregationKey OOP Concepts Covered:
+
+    Abstraction means to handle complexity by hiding unnecessary details from the user. In java, abstraction is achieved by interfaces and abstract classes. We apply Data Abstraction in a Selenium framework by using the Page Object Model design pattern. We define all our locators and their methods in the page class. We can use these locators in our tests, but we cannot see the implementation of their underlying methods.
+
+    Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. Encapsulation can be achieved by: Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
+    ConfigurationReader class in an utilities package to handle reading configuration properties.
+    It encapsulates the logic for reading configuration files, making our code more organized and easier to maintain.
+
+    Inheritance is the mechanism in java by which one class is allowed to inherit the features (fields and methods) of another class. We apply Inheritance in our Automation Framework by creating a Base Class for WebDriver and related utilities, then extending and overriding it in test classes.
+
+    Polymorphism allows us to perform a single action in different ways. We can achieve Polymorphism in two ways.
+     Compile-Time Polymorphism: Static
+    Method Overloading: When there are multiple methods with same name but different parameter. Methods can be overloaded by change in number of arguments and change in type of arguments
+    
+    Run time Polymorphism - Dynamic
+    – Method Overriding: It occurs when a derived class has a definition for one of the member functions of the base class. That base function is set to be overridden. In Selenium Automation, Method Overriding can be achieved by overriding any WebDriver method. For example, we can override findElement() in a custom WebDriver class to change its behavior.
+
+    Composition is a strong "has-a" relationship where one class owns objects of another class and manages their lifecycle.
+
+    Aggregation is a weaker "has-a" relationship where one class references objects of another class, but does not own them.
+
+   Data Integrity ensures that information remains accurate, consistent, and free from duplication or corruption.
+
+    Separation of Concerns is the principle of organizing code so that each class or module has a clear, distinct responsibility.

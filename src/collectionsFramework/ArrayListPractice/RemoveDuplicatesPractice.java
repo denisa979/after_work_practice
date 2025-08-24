@@ -1,5 +1,6 @@
 package collectionsFramework.ArrayListPractice;
 
+import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -10,11 +11,9 @@ import java.util.stream.Collectors;
 public class RemoveDuplicatesPractice{
 	public static void main( String[] args ){
 		ArrayList<Integer> numbers = new ArrayList<Integer>( Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8));
-		
-		ArrayList<Integer> removeAllDuplicate=removeDuplicates( numbers );
-		System.out.println( removeAllDuplicate );
-		
-		System.out.println ("----------------------------------------------------------------" );
+		System.out.println("removeDuplicates(numbers) = " + removeDuplicateNum(numbers));
+
+		System.out.println("----------------------------------------------------------------" );
 		
 		ArrayList<Integer> numbers1 = new ArrayList<Integer>( Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8)); 
 LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<Integer>(numbers1);  
@@ -41,7 +40,16 @@ Write a Java method that removes duplicate elements from an ArrayList of integer
 		LinkedHashSet<Integer> removeAllDuplicate = new LinkedHashSet <> ();
 		return new ArrayList<> (removeAllDuplicate);
 	}
-
+	public static ArrayList<Integer> removeDuplicates(List<Integer> numbers){
+		LinkedHashSet<Integer>removeDuplicateNum=new LinkedHashSet<>();
+		return new ArrayList<>(removeDuplicateNum);
+	}
+	public static ArrayList<Integer>removeDuplicateNum(List<Integer>numbers){
+		LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+		ArrayList<Integer> removeDuplicateNumbers = new ArrayList<>(linkedHashSet);
+	
+		return removeDuplicateNumbers;
+	}
 }
 /*
 ArrayList<Integer> numbers = new ArrayList<Integer>(Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8)); 

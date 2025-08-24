@@ -1,9 +1,9 @@
-package oopPractice;
+package oopPractice.interfacePolymorphism;
 
-public class InterfacePolymorphismPractice{
-	
+public interface Animal {
+    void makeSound();
+    void eat();
 }
-
 /*
 Problem : Zoo Management (Polymorphism)
 Design an animal system:
@@ -27,4 +27,4 @@ Each animal must have unique sounds/eating behaviors
 Demonstrate runtime polymorphism with Animal references
 
 Add a Swimmable interface for aquatic animal
- */
+*/

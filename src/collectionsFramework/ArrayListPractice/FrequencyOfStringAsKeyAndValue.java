@@ -9,7 +9,7 @@ public class FrequencyOfStringAsKeyAndValue{
 
 	public static void main( String[] args ){
 		    List<String> list = List.of("apple", "banana", "apple", "orange", "banana", "apple");
-		System.out.println( "frequency1( list ) = " + frequencyOfString( list ) );
+		System.out.println( "frequency1( list ) = " + frequencyOfKay( list ) );
 	}
 	
 	
@@ -19,5 +19,12 @@ public class FrequencyOfStringAsKeyAndValue{
 		nameCount.put(s, nameCount.getOrDefault(s,0)+1);
 	}
 	return nameCount;
+}
+public static Map<String, Integer> frequencyOfKay(List<String>list){
+		Map<String, Integer> keyCount=new HashMap<>();
+	for (String each: list){
+		keyCount.put(each, keyCount.getOrDefault(each, 0)+1);
+	}
+	return keyCount;
 }
 }

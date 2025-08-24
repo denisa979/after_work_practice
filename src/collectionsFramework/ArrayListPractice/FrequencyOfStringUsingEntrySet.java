@@ -9,7 +9,7 @@ public class FrequencyOfStringUsingEntrySet{
 	
 	public static void main( String[] args ){
 		 List<String> list = List.of("apple", "banana", "apple", "orange", "banana", "apple");
-		System.out.println ( "namesCount ( list ) = " + namesCount ( list ) );
+		System.out.println ( "frequencyOfString4 ( list ) = " + frequencyOfString6 ( list ) );
 	}
 	
 	public static List<String> namesCount(List<String> name){
@@ -57,7 +57,29 @@ public static List<String> frequency(List<String> list){
 		}
 		return result;
 	}
-	
+	public static List<String> frequencyOfString4(List<String>list){
+		Map<String, Integer> nameCount5 = new HashMap<>();
+		for (String each : list){
+			nameCount5.put(each, nameCount5.getOrDefault(each,0)+1);
+		}
+		List<String>result = new ArrayList<>();
+		for(Map.Entry<String, Integer> entrySet : nameCount5.entrySet()){
+		result.add(entrySet.getKey()+ " "+ entrySet.getValue());
+	}
+	return result;
+}
+
+public static List<String> frequencyOfString6(List<String>list){
+		Map<String, Integer> nameCount6 = new HashMap<>();
+	for (String each: list){
+		nameCount6.put(each, nameCount6.getOrDefault(each,0)+1);
+	}
+	List<String>result=new ArrayList<>();
+	for(Map.Entry<String, Integer>entrySet: nameCount6.entrySet()){
+		result.add(entrySet.getKey()+ " "+ entrySet.getValue());
+	}
+	return result;
+}
 }
        
          /*

@@ -1,4 +1,4 @@
-package oopPractice;
+package oopPractice.encapsulationAbstractionPolymorphism;
 
 public class CheckingAccount extends BankAccount{
 	private double overdraftLimit;

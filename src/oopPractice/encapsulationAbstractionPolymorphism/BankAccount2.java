@@ -1,33 +1,30 @@
-package oopPractice;
+package oopPractice.encapsulationAbstractionPolymorphism;
 
-public class SavingsAccount extends BankAccount{
-
-	private double interestRate;
+public abstract class BankAccount2{
 	
-	public SavingsAccount(int accountNumber, double initialBalance ,double interestRate){
-		
-		super(accountNumber, initialBalance);
-		this.interestRate=interestRate;
-	}
-
-	public double getInterestRate( ){
-		return interestRate;
-	}
-	public void setInterestRate(double interestRate){
-		this.interestRate=interestRate;
-	}
+	private int accountNumber;
+	protected double balance;
 	
-	@Override
-	public void withdraw( double amount ){
-		double fee = 2.0;
-		if(amount>0 && balance >= amount + fee){
-			balance-=(amount + fee);
+	public BankAccount2(int accountNumber, double initialBalance){
+		this.accountNumber=accountNumber;
+		this.balance=initialBalance;
+	}
+	public void deposit(double amount){
+		if(amount>0){
+			balance+=amount;
 		}
 	}
+
+	public double getBalance( ){
+		return balance;
+	}
+
+	public int getAccountNumber( ){
+		return accountNumber;
+	}
+	public abstract void withdraw(double amount);
 }
-
 /*
-
 Problem : Banking System (Encapsulation, Abstraction & runtime polymorphism (overriding) -->dynamic 
 Design a banking system with these classes:
 

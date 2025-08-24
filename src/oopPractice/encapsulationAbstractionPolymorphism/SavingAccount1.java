@@ -1,4 +1,4 @@
-package oopPractice;
+package oopPractice.encapsulationAbstractionPolymorphism;
 
 public abstract class SavingAccount1 extends BankAccount1{
 	private double interestRate;

@@ -38,6 +38,11 @@ public static Map<String, Long> frequencyOfString5(List<String> list){
         return list.stream()
                 .collect(Collectors.groupingBy(s -> s,Collectors.counting()));
 }
+
+public static Map<String, Long> frequencyOfString3(List<String>list){
+        return list.stream()
+                .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+}
 }
 
 
