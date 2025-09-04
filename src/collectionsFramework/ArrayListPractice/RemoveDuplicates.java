@@ -8,8 +8,8 @@ import java.util.List;
 public class RemoveDuplicates{
 
 	public static void main( String[] args ){
-		ArrayList<Integer> list = new ArrayList <> ( Arrays .asList ( 2,2,4,3,9,1,5,2,9,9 ));
-		System.out.println ( "removeDuplicates3 ( list ) = " + removeDuplicates4 ( list ) );
+		ArrayList<String> list = new ArrayList <> ( Arrays .asList ( "Apple", "Banana", "Apple", "Banana" ));
+		System.out.println("removeDuplicates2 ( list ) = " + removeDuplicates2(list));
 	}
 	
 	public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> number){
@@ -39,7 +39,7 @@ public class RemoveDuplicates{
 		}
 		return result;
 	}
-	public static ArrayList<Integer> removeDuplicates2(ArrayList<Integer>numbers){
+	public static ArrayList<Integer> removeDuplicates5(ArrayList<Integer> numbers){
 		ArrayList<Integer> result = new ArrayList<>();
 		HashSet<Integer> seen = new HashSet<>();
 		for (Integer num: numbers){
@@ -73,6 +73,30 @@ public class RemoveDuplicates{
 			}
 		}
 	
+		return result;
+	}
+	public static ArrayList<Integer> removeDuplicates1(List<Integer>numbers){
+		ArrayList<Integer>count=new ArrayList<>();
+		HashSet<Integer>seen = new HashSet<>();
+		for (Integer num: numbers){
+			if(seen.contains(num)){
+				seen.add(num);
+				count.add(num);
+			}
+		}
+		
+		return count;
+	}
+	public static ArrayList<String>removeDuplicates2(List<String>words){
+		ArrayList<String>result= new ArrayList<>();
+		HashSet<String>seen=new HashSet<>();
+		for (String word: words){
+			if(!seen.contains(word)){
+				seen.add(word);
+				result.add(word);
+				
+			}
+		}
 		return result;
 	}
 }

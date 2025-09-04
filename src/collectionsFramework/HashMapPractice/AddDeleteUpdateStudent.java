@@ -96,8 +96,36 @@ public class AddDeleteUpdateStudent{
 		}  else{
 			System.out.println ("Student data is empty" );
 		}
-		
 
+		System.out.println("=====================================");
+		 Map<String, Integer> student6=new HashMap<>();
+		 student6.put("Steven", 79);
+		 student6.put("John", 86);
+		 student6.put("Severina", 63);
+		 student6.put("Darko", 65);
+		 student6.put("Mahmut", 76);
+		 student6.put("Camru", 95);
+		System.out.println("student6 = " + student6);
+		 student6.put("Severina",69);
+		System.out.println("student6 = " + student6);
+		student6.remove("John");
+		System.out.println("student6 = " + student6);
+		String searchStudent1= "Camru";
+		if(student6.containsKey(searchStudent1)){
+			System.out.println( searchStudent1 + "' grade ="+ student6.get(searchStudent1));
+			for(Map.Entry<String, Integer>entrySet:student6.entrySet()){
+				System.out.println(entrySet.getKey()+ "="+entrySet.getValue());
+				if(!student6.isEmpty()){
+					int sum =0;
+					for(int grade : student6.values()) {
+						sum+=grade;
+					}
+					double average = (double)sum/student6.size();
+					System.out.println("average = " + average);
+				}
+			}
+			
+		}
 	}
 }
 /*

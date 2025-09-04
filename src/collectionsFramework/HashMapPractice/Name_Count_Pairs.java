@@ -1,4 +1,4 @@
-package collectionsFramework.LinkedHashMapPractice;
+package collectionsFramework.HashMapPractice;
 
 import java.util.*;
 
@@ -148,7 +148,7 @@ public static void main(String[] args){
                   return countName;
               }
               public static Map<String, Integer> countNames(List<String>list){
-    Map<String, Integer> nameCount=new LinkedHashMap<>();
+    Map<String, Integer> nameCount=new HashMap<>();
                   for( String each : list ){
                       String[] parts5=each.split( " " );
                       String name6=parts5[ 0 ];
@@ -157,6 +157,26 @@ public static void main(String[] args){
                       
                   }
                   return nameCount;
+              }
+              public static Map<String, Integer> nameCount6(List<String> list){
+    Map<String, Integer> countNames=new HashMap<>();
+                  for (String each: list){
+                      String [] parts= each.split(" ");
+                      String name = parts[0];
+                      Integer count = Integer.parseInt(parts[1]);
+                      countNames.put(name, count);
+                  }
+                  return countNames;
+              }
+              public static Map<String, Integer> nameCount9(List<String>list){
+    Map<String, Integer> countingNames=new HashMap<>();
+                  for (String each: list){
+                      String[] parts=each.split(" ");
+                      String names=parts[0];
+                      Integer count=Integer.parseInt(parts[1]);
+                      
+                  }
+                  return countingNames;
               }
 }             
 

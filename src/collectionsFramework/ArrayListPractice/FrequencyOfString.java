@@ -6,13 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class FrequencyOfString{
-	public static void main( String[] args ){
-	 List<String> list = List.of("apple", "banana", "apple", "orange", "banana", "apple");
+	public static void main(String[] args){
+		 List<String> list = List.of("apple", "banana", "apple", "orange", "banana", "apple");
     countWords(list).forEach(System.out::println);
-	
-
-	
-}
+	}
         /*
          Counts how many times each string appears in the list and returns formatted results
 The second method is a classic frequency counter implementation using the getOrDefault() pattern, which is very efficient for counting occurrences.

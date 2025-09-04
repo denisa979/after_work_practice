@@ -5,27 +5,39 @@ LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<Integer>(numbers);
 ArrayList<Integer> numbersListWithoutDuplicate = new ArrayList<Integer>(LinkedHashSet)); 
 System.out.println(numbersListWithoutDuplicate);
 
-Also we can handle this via stream  
+====================================================================
+
+Also, we can handle this via stream
 ArrayList<Integer> marksList = new ArrayList<Integer>(Arrays.asList(1,2,2,4,6,7,2,3,5,4,3,8,2,8)); 
 List<Integer> marksListUnique= marksList.stream().distnict().collect(Collectors.toList()); 
-System.out.println(marksListUnique); 
+System.out.println(marksListUnique);
+
+===================================================================
 
  How to compare two array list? 
-Via Collection.sort(); and equal  
+Via Collection.sort(); and equal
+
+===================================================================
 
 How to find additional element in list while comparing 2 List? 
 If we have 2 list l1 & l2 , first we remove all element of l2 
 L1.removeAll(l2): 
 Sysout(L1) – you will get additional element.
 
+==================================================================
+
 How to find common element in list while comparing 2 List? 
 L1.retainAll(L2); 
 Sysout(L1) – you will get common element.
+
+==================================================================
 
 How will you print length of string without using length method. 
 String str = “Pankaj” 
 Sysout(str.toCharArray().length); 
 Sysout(str.lastIndexOf(“”));
+
+==================================================================
 
 How to reverse an Integer? 
 int num = 12345; 
@@ -36,6 +48,7 @@ num = num/10;
 } 
 Sysout (rev)
 
+===================================================================
 
  How to reverse any array? 
 public class reverse array { 
@@ -53,8 +66,10 @@ for(int element:arr)
 { 
 System.out.print( element + " "); 
 } 
-}} 
-================================================================ 
+}}
+
+===================================================================
+
 public class reverse array { 
 public static void main(String[] args) { 
 int [] Array ={7,8,9,3,4,6,11,67,98}; 
@@ -62,10 +77,193 @@ int k=Array.length-1;
 for(k=Array.length-1;k>=0;k--){ 
 System.out.print( Array[k] + " "); 
 } 
-}} 
-==========================
+}}
+
+=================================================================
 
 • Map.Entry: Represents a single key-value pair in the map.
 • entrySet(): Returns a set of all entries, allowing you to iterate over them.
 • getKey() / getValue(): Methods to access the key and value from each entry.
 This approach is efficient and clean, letting you work with both keys and values in a single loop
+
+===============================================================
+
+Math.floorDiv(l, 2) vs. l / 2 in Java
+Both are used to perform integer division, but there's a key difference in behavior when working with negative numbers.
+
+ 1. When l is positive (like array length):
+int l = 5;
+System.out.println(Math.floorDiv(l, 2)); // Output: 2
+System.out.println(l / 2);               // Output: 2
+ Both give the same result — because 5 / 2 = 2 (integer division discards the decimal).
+
+ 2. When l is negative:
+int l = -5;
+System.out.println(Math.floorDiv(l, 2)); // Output: -3
+System.out.println(l / 2);               // Output: -2
+
+  How it works:
+l / 2 gives -2 because it simply truncates the decimal (toward 0)
+
+Math.floorDiv(l, 2) gives -3 because it rounds toward negative infinity (like math’s floor)
+
+Since you're splitting an array length, which is always non-negative, the following are equivalent:
+
+int n = Math.floorDiv(l, 2);
+is the same as:
+int n = l / 2;
+
+ Use l / 2 if you're confident the input is positive (like array lengths).
+Use Math.floorDiv(l, 2) if you want mathematically correct floor behavior, even for negative numbers.
+
+================================================================
+
+ Java Borrowing/Library System Example:
+
+**basic Java library system** with support for book borrowing, returning, and viewing available books. This is focused on demonstrating core object-oriented concepts and is appropriate for both educational and small projects.
+
+ 1. Core Classes
+
+ **Book**
+Represents each book in the library.
+
+public class Book {
+    private String title;
+    private String author;
+    private boolean isBorrowed;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.isBorrowed = false;
+    }
+
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public boolean isBorrowed() { return isBorrowed; }
+    public void setBorrowed(boolean status) { this.isBorrowed = status; }
+}
+```
+
+ **Library**
+Manages the collection of books, borrowing, and returning actions.
+
+import java.util.ArrayList;
+
+public class Library {
+    private ArrayList books = new ArrayList<>();
+
+    // Add book to library
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    // Borrow book by title
+    public void borrowBook(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                if (!book.isBorrowed()) {
+                    book.setBorrowed(true);
+                    System.out.println("You successfully borrowed " + title);
+                    return;
+                } else {
+                    System.out.println("Sorry, this book is already borrowed.");
+                    return;
+                }
+            }
+        }
+        System.out.println("Sorry, this book is not in our catalog.");
+    }
+
+    // Return book
+    public void returnBook(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                if (book.isBorrowed()) {
+                    book.setBorrowed(false);
+                    System.out.println("You successfully returned " + title);
+                } else {
+                    System.out.println("This book was not borrowed.");
+                }
+                return;
+            }
+        }
+        System.out.println("This book does not belong to our library.");
+    }
+
+    // List available books
+    public void showAvailableBooks() {
+        System.out.println("Available books:");
+        for (Book book : books) {
+            if (!book.isBorrowed()) {
+                System.out.println("- " + book.getTitle() + " by " + book.getAuthor());
+            }
+        }
+    }
+}
+```
+
+ **User Interaction (Main Program)**
+Sample usage:
+
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+
+        // Add books to the library
+        library.addBook(new Book("1984", "George Orwell"));
+        library.addBook(new Book("To Kill a Mockingbird", "Harper Lee"));
+        library.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
+
+        // Display available books
+        library.showAvailableBooks();
+
+        // Borrow a book
+        library.borrowBook("1984");
+        library.showAvailableBooks();
+
+        // Try to borrow the same book again
+        library.borrowBook("1984");
+
+        // Return the book
+        library.returnBook("1984");
+        library.showAvailableBooks();
+    }
+}
+```
+
+ 2. Key Features
+
+- **Borrowing**: Checks if the book is available, marks it as borrowed.
+- **Returning**: Sets the book status back to available.
+- **Listing**: Shows all books not currently borrowed.
+- **Extensible**: Can easily be expanded to support borrowers, loan history, quantity tracking, etc.
+
+ 3. Example Output
+
+```
+Available books:
+- 1984 by George Orwell
+- To Kill a Mockingbird by Harper Lee
+- The Great Gatsby by F. Scott Fitzgerald
+You successfully borrowed 1984
+Available books:
+- To Kill a Mockingbird by Harper Lee
+- The Great Gatsby by F. Scott Fitzgerald
+Sorry, this book is already borrowed.
+You successfully returned 1984
+Available books:
+- 1984 by George Orwell
+- To Kill a Mockingbird by Harper Lee
+- The Great Gatsby by F. Scott Fitzgerald
+```
+
+ 4. Advanced Extensions
+
+- Add borrower/user classes and track which user has borrowed which book.
+- Limit how many books a user can borrow.
+- Implement due dates and overdue tracking.
+- Add support for multiple copies of each book.
+- Store data in files or a database for persistence.
+
+

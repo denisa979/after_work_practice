@@ -22,7 +22,6 @@ public class StudentGrades{
 } else {
     System.out.println("Student does not exist in system.");
 	}
-
 		for(Map.Entry<String , Integer> entrySet: studentAndGrades.entrySet ( )) {
 			System.out.println ("Student: "+ entrySet.getKey ()+ "'s grade= "+entrySet.getValue () );
 		}
@@ -38,6 +37,7 @@ public class StudentGrades{
 		System.out.println ("-----------------------------------------" );
 		
 }
+
 }
    /*
 HashMap Practice

@@ -65,14 +65,8 @@ public class LongestConsecutiveSequence{
 		}
 		maxNum=Math.max ( maxNum, currentLen );
 		}
-		
-		
-		
 		return maxNum;
 	}
-	
-	
-	
 	public static int sequence(int [] nums){
 		if(nums==null || nums.length==0)return 0;
 		
